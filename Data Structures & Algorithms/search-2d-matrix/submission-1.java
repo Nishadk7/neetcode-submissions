@@ -1,0 +1,22 @@
+class Solution {
+
+
+    public boolean searchMatrix(int[][] matrix, int target) {
+        
+
+        int l = 0;
+        int r = matrix.length * matrix[0].length - 1;
+        int n = matrix[0].length;
+        int m = 0;
+        
+        while(l <= r){
+            m = (l+r)/2;
+            int c = matrix[m/n][m%n]; 
+            if(c == target){return true;}
+            else if(c < target){l = m+1;}
+            else{r = m-1;}
+        }
+        return false;
+
+    }
+}
